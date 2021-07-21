@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import pl.karkaminski.showdistance.data.model.Station
 import pl.karkaminski.showdistance.data.model.StationKeyword
 import pl.karkaminski.showdistance.databinding.SearchStationFragmentBinding
 import java.util.*
@@ -47,13 +48,24 @@ class SearchStationFragment : Fragment() {
         ) { keywordList ->
             keywordAdapter.apply {
                 if (keywordList != null) {
-                    Collections.sort(keywordList, object : Comparator<StationKeyword> {
-                        override fun compare(o1: StationKeyword?, o2: StationKeyword?): Int {
-                            //TODO compare objects by hits field
-                            return 0
-                        }
-                    })
+//                    Collections.sort(keywordList, object : Comparator<StationKeyword> {
+//                        override fun compare(o1: StationKeyword?, o2: StationKeyword?): Int {
+//                            //TODO compare objects by hits field
+//                            return 0
+//                        }
+//                    })
                     this.keywordList = keywordList as ArrayList<StationKeyword>
+                    liveDataSetChanged()
+                }
+            }
+        }
+
+        viewModel.getStations().observe(
+            viewLifecycleOwner
+        ) { stationsList ->
+            keywordAdapter.apply {
+                if (stationsList != null) {
+                    this.stationsList = stationsList as ArrayList<Station>
                     liveDataSetChanged()
                 }
             }
