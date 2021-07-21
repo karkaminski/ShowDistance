@@ -64,6 +64,9 @@ class KeywordAdapter :
             override fun publishResults(constraint: CharSequence?, results: FilterResults?) {
                 stationsList.clear()
                 stationsList.addAll(results?.values as ArrayList<Station>)
+                stationsList.sortWith(Comparator { lhs, rhs ->
+                    if (lhs.hits!! > rhs.hits!!) -1 else if (lhs.hits < rhs.hits) 1 else 0
+                })
                 notifyDataSetChanged()
             }
         }

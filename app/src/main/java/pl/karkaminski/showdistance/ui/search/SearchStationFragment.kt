@@ -48,12 +48,6 @@ class SearchStationFragment : Fragment() {
         ) { keywordList ->
             keywordAdapter.apply {
                 if (keywordList != null) {
-//                    Collections.sort(keywordList, object : Comparator<StationKeyword> {
-//                        override fun compare(o1: StationKeyword?, o2: StationKeyword?): Int {
-//                            //TODO compare objects by hits field
-//                            return 0
-//                        }
-//                    })
                     this.keywordList = keywordList as ArrayList<StationKeyword>
                     liveDataSetChanged()
                 }
