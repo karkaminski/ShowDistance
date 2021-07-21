@@ -21,7 +21,6 @@ class KoleoRepository(context: Context) {
         private const val TAG = "Repository"
         const val BASE_URL = "https://koleo.pl/api/v2/main/"
         const val CACHE_SIZE = (5 * 1024 * 1024).toLong()
-
     }
 
     private val myCache = Cache(context.cacheDir, CACHE_SIZE)
