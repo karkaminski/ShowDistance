@@ -1,13 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.ChooseStations">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Hello" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        tools:context=".ui.choosestations.ChooseStationsFragment">
 
-</FrameLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp"
+            android:background="@color/design_default_color_primary">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/button_start"
+                style="@style/station_button"
+                android:layout_width="match_parent"
+                android:layout_margin="8dp"
+                android:hint="Stacja początkowa" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/button_destination"
+                style="@style/station_button"
+                android:layout_width="match_parent"
+                android:layout_margin="8dp"
+                android:hint="Stacja docelowa" />
+
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button_calculate"
+            style="@style/count_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:hint="Oblicz dystans" />
+    </LinearLayout>
+</layout>

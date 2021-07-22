@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="station_button">
+        <item name="android:textAlignment">textStart</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/button_station</item>
+        <item name="android:paddingLeft">8dp</item>
+    </style>
+
+    <style name="count_button">
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/button_count</item>
+        <item name="android:paddingLeft">8dp</item>
+    </style>
+
+</resources>

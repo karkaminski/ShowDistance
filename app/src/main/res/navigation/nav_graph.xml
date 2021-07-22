@@ -3,11 +3,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/searchStationFragment">
+    app:startDestination="@id/chooseStationsFragment">
 
     <fragment
         android:id="@+id/searchStationFragment"
         android:name="pl.karkaminski.showdistance.ui.search.SearchStationFragment"
         android:label="search_station_fragment"
         tools:layout="@layout/search_station_fragment" />
+    <fragment
+        android:id="@+id/chooseStationsFragment"
+        android:name="pl.karkaminski.showdistance.ui.choosestations.ChooseStationsFragment"
+        android:label="choose_stations_fragment"
+        tools:layout="@layout/choose_stations_fragment" >
+        <action
+            android:id="@+id/action_chooseStationsFragment_to_searchStationFragment"
+            app:destination="@id/searchStationFragment" />
+    </fragment>
 </navigation>
